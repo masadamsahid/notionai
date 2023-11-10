@@ -8,6 +8,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { clerk } from "@/lib/clerk-server";
 import TipTapEditor from "@/components/TipTapEditor";
+import DeleteButton from "@/components/DeleteButton";
 
 type NotebookPageProps = {
   params: {
@@ -42,7 +43,9 @@ const NotebookPage = async ({ params: { noteId } }: NotebookPageProps) => {
           <span className="font-semibold">{user.firstName} {user.lastName}</span>
           <span className="inline-block mx-1">/</span>
           <span className="text-stone-500 font-semibold">{note.name}</span>
-          <div className="ml-auto">DELETE BTN</div>
+          <div className="ml-auto">
+            <DeleteButton noteId={note.id} />
+          </div>
         </div>
         
         <div className="h-4"></div>
