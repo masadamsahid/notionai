@@ -17,7 +17,7 @@ export async function generateImagePrompt (name: string) {
         },
         {
           role: "user",
-          content: `Please generate a thumbnail description for my notebook titles ${name} and your response must be in less than 1000 characters`,
+          content: `Please generate a thumbnail description for my notebook title ${name} and your response must be short in less than 1000 characters`,
         },
       ],
     });

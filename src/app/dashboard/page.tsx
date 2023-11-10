@@ -7,6 +7,7 @@ import CreateNoteDialog from "@/components/CreateNoteDialog";
 import { db } from "@/lib/db";
 import { $notes } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
+import Image from "next/image";
 
 type DashboardPageProps = {}
 
@@ -51,10 +52,10 @@ const DashboardPage = async (props: DashboardPageProps) => {
             <CreateNoteDialog/>
             {notes.map((note) => {
               return (
-                <a href={`/notes/${note.id}`} key={note.id}>
+                <a href={`/notebook/${note.id}`} key={note.id}>
                   <div
                     className="overflow-hidden flex flex-col hover:shadow-xl transition hover:-translate-y-1 rounded-lg border border-stone-200">
-                    <img
+                    <Image
                       width={400}
                       height={200}
                       alt={note.name}
