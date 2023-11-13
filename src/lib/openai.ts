@@ -20,6 +20,7 @@ export async function generateImagePrompt (name: string) {
           content: `Please generate a thumbnail description for my notebook title ${name} and your response must be short in less than 1000 characters`,
         },
       ],
+      max_tokens: 200,
     });
     
     const data = await response.json();
